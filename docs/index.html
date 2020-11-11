@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Operations Learning</title>
+    <link rel="icon" type="image/x-icon" href="./_img/拍照.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <!-- themes -->
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    <!-- <link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css"> -->
+
+    <!-- gittalk 好像没用？-->
+    <!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css"> -->
+
+    <!-- <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script> -->
+    <!-- <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
+    <!-- <script>
+        const gitalk = new Gitalk({
+            clientID: 'Github Application Client ID',
+            clientSecret: 'Github Application Client Secret',
+            repo: 'Github repo',
+            owner: 'Github repo owner',
+            admin: ['Github repo collaborators, only these guys can initialize github issues'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+    </script> -->
+
+    <!-- 将自定义样式放在 Github 上会导致加载速度变得非常慢，所以采取直接内嵌的方式 -->
+    <style type="text/css">
+        /* 设置行距 */
+        
+        p,
+        ol,
+        ul {
+            line-height: 30px !important;
+        }
+        
+        .sidebar,
+        .sidebar-toggle,
+        .search input {
+            background-color: rgba(243, 242, 238, 1) !important;
+        }
+        
+        .sidebar ul li a {
+            letter-spacing: 1.3px !important;
+        }
+        
+        body {
+            letter-spacing: 1.2px !important;
+        }
+        
+        code {
+            letter-spacing: 1.0px !important;
+        }
+        
+        .markdown-section code {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 左上角 中英文切换 -->
+    <!-- <nav>
+        <a href="#/">EN</a>
+        <a href="#/zh-cn/">中文</a>
+    </nav> -->
+
+    <!-- 加载时显示的内容 -->
+    <div id="app">loading···😊</div>
+
+    <script>
+        window.$docsify = {
+            maxAge: 100,
+            coverpage: true,
+            name: 'document',
+            nameLink: '#/README.md',
+            // nameLink: '/#/README',
+            // basePath: "https://floatlig.github.io/JavaLearning/#/",
+            maxLevel: 4,
+            subMaxLevel: 5,
+            repo: 'https://github.com/KevinJohn-GH/mydoc',
+
+            //👆封面
+            // coverpage: true,
+            // multiple covers
+            // coverpage: ['/', '/zh-cn/'],
+
+            //打开默认的主页
+            // homepage: 'guide.md',
+
+            //主色调
+            // themeColor: '#3F51B5'
+
+            //标题
+            // name: 'Java Learning',
+            // nameLink: '/',
+
+            //👈左边导航栏
+            // loadSidebar: true,
+            // autoHeader: true,
+            // maxLevel: 3,
+            // subMaxLevel: 5,
+
+            //👉右上面导航栏
+            // loadNavbar: true,
+            // mergeNavbar: true,
+
+            //👉绿色小猫跳转到GitHub
+            // repo: 'https://github.com/floatLig/JavaLearning',
+
+            //不知道是什么东西~
+            // alias: {
+            //     '/.*/_sidebar.md': '/_sidebar.md'
+            // },
+
+            //不知道有什么用
+            // auto2top: true,
+
+            search: {
+                paths: 'auto',
+                placeholder: '🔍 Type to search ',
+                noData: '😞 No Results! ',
+                depth: 6
+            },
+
+            //👇用于跳转，但是好像没用？
+            // pagination: {
+            //     previousText: '上一章节',
+            //     nextText: '下一章节',
+            //     crossChapter: true
+            // },
+
+            // docsify-copy-code (defaults)
+            copyCode: {
+                buttonText: 'copy',
+                errorText: '×',
+                successText: '√'
+            },
+
+            markdown: {
+                renderer: {
+                    code: function(code, lang) {
+                        if (lang === "mermaid") {
+                            return (
+                                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+                            );
+                        }
+                        return this.origin.code.apply(this, arguments);
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- docsify -->
+    <!-- 这里数值开头的标题不能跳转，使用cyc大佬的 -->
+    <!-- <script src="//unpkg.com/docsify/lib/docsify.min.js"></script> -->
+    <script src="https://cyc-1256109796.cos.ap-guangzhou.myqcloud.com/docsify.min.js"></script>
+    <!-- java高亮 -->
+    <!-- <script src="//unpkg.com/prismjs/components/prism-java.js"></script> -->
+    <script src="//unpkg.com/prismjs/components/prism-java.min.js"></script>
+    <!-- javaScript高亮 -->
+    <!-- <script src="//unpkg.com/prismjs/components/prism-javascript.js"></script> -->
+    <script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+    <!-- sql高亮 -->
+    <!-- <script src="//unpkg.com/prismjs/components/prism-sql.js"></script> -->
+    <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+    <!-- bash高亮 -->
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <!-- c高亮 -->
+    <script src="//unpkg.com/prismjs/components/prism-c.min.js"></script>
+    <!-- properties高亮 -->
+    <!-- <script src="//unpkg.com/prismjs/components/prism-properties.js"></script> -->
+    <!-- <script src="//unpkg.com/prismjs/components/prism-properties.min.js"></script> -->
+    <!-- plugins -->
+    <!-- 试一下【:100:】  -->
+    <!-- <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script> -->
+    <!-- 图片放大缩小，调整图片大小【':size=50x100'】 -->
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- 👇用于跳转下一章，但是好像没用？ -->
+    <!-- <script src="../dist/docsify-pagination.js"></script> -->
+    <!-- 代码复制 -->
+    <script src="https://unpkg.com/docsify-copy-code@2"></script>
+    <!-- 谷歌分析 -->
+    <!-- <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script> -->
+    <!-- 搜索 -->
+    <!-- <script src="//unpkg.com/docsify/lib/docsify.min.js"></script> -->
+    <!-- <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script> -->
+    <!-- <script src="//unpkg.com/docsify/lib/docsify.js"></script> -->
+    <!--全文搜索,直接用官方提供的无法生效-->
+    <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+</body>
+
+</html>
